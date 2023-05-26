@@ -1,5 +1,4 @@
 const headerI = document.querySelector(".header");
-const loading = document.querySelector('#loading');
 if (headerI) {
     const icons1 = document.querySelector('.icons1');
     const icons2 = document.querySelector('.icons2');
@@ -17,6 +16,4 @@ if (headerI) {
         $(".lds-roller").fadeOut();
         $("#loading").delay(5200).fadeOut("slow");
     });
-} else if (loading) {
-    loading.style.display = "none"
 }

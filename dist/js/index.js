@@ -165,6 +165,29 @@ if (products) {
         }
     }
 }
+
+if (products) {
+    const fonActive = products.querySelector('.products__cart__fons')
+    const links = document.querySelectorAll('a');
+
+    links.forEach((i) => {
+        i.onclick = () => {
+            console.log(i)
+            fonActive.classList.remove('active__fons')
+            activeFon()
+        }
+    })
+
+    function activeFon() {
+        if (fonActive) {
+            fonActive.classList.add('active__fons')
+        } else {
+            fonActive.classList.remove('active__fons')
+        }
+    }
+    activeFon()
+}
+
 const footerIn = document.querySelector('.footer_in');
 if (footerIn) {
     const media = window.matchMedia('(min-width: 1050px)');

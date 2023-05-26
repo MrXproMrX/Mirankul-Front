@@ -20,6 +20,12 @@
         grid-template-columns: repeat(2,1fr);
         align-items: start;
         width: 100%;
+
+        .header_in__item + .header_in__item{
+            .header_in__item__list{
+              border:none !important;
+            }
+        }
     }
 
     &__item__list{
@@ -117,16 +123,48 @@
        padding-bottom: 40px;
        top: 0;
        right: 0px;
-        height: 100%;
-        padding-top: 160px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: top center;
-        width: 50%;
+       height: 100%;
+       padding-top: 160px;
+       width: 50%;
+       overflow: hidden;
 
         .products__list__scrull{
             padding-bottom: 0px;
         }
+
+        .active__fons{
+            opacity: 1;
+            transform: scale(1.9);
+            -webkit-transform: scale(1.9);
+            -moz-transform: scale(1.9);
+            -ms-transform: scale(1.9);
+            -o-transform: scale(1.9);
+        }
+    }
+
+    &__cart__fons{
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(1.15);
+        transition: opacity .6s ease;
+        transform: scale(1);
+        transition: opacity .1s linear,transform 100s linear;
+        -webkit-transition: opacity .1s linear,transform 100s linear;
+        -moz-transition: opacity .1s linear,transform 100s linear;
+        -ms-transition: opacity .1s linear,transform 100s linear;
+        -o-transition: opacity .1s linear,transform 100s linear;
+}
+
+    &__footer{
+        position: relative;
+        z-index: 10;
     }
 
     &__title__h2{
@@ -241,6 +279,8 @@
     &__cart__item{
         background-color: rgba(24, 43, 69, 0.6);
         width: 100%;
+        position: relative;
+        z-index: 5;
     }
 
     &__menu{
@@ -661,6 +701,11 @@
         span{
             @include fiximg(20px,22px,false);
         }
+    }
+
+    &__list__scrull{
+        position: relative;
+        z-index: 5;
     }
 }
 
