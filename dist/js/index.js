@@ -169,23 +169,25 @@ if (products) {
 if (products) {
     const fonActive = products.querySelector('.products__cart__fons')
     const links = document.querySelectorAll('a');
-
-    links.forEach((i) => {
-        i.onclick = () => {
-            console.log(i)
-            fonActive.classList.remove('active__fons')
+    if (fonActive) {
+        setTimeout(() => {
             activeFon()
-        }
-    })
+        }, 1)
 
-    function activeFon() {
-        if (fonActive) {
+        links.forEach((i) => {
+            i.onclick = () => {
+                console.log(i)
+                fonActive.classList.remove('active__fons')
+                setTimeout(() => {
+                    activeFon()
+                }, 1)
+            }
+        })
+
+        function activeFon() {
             fonActive.classList.add('active__fons')
-        } else {
-            fonActive.classList.remove('active__fons')
         }
     }
-    activeFon()
 }
 
 const footerIn = document.querySelector('.footer_in');
